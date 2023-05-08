@@ -22,12 +22,22 @@ function divide (a, b) {
 
 //variables for each part of equation
 //first number, operand, second number
+let numOne;
+let NumTwo;
+let operator;
+
+let one = document.getElementsByClassName("one");
+let two = document.getElementsByClassName("two");
+let three = document.getElementsByClassName("three");
+let plus = document.getElementsByClassName("plus");
+
 
 //function called "operate" that takes operator and 2 numbers
 //uses math functions above
 
-//need html side of calc
-//buttons, display, equals key, clear key
+function operate (a, b, oper) {
+
+}
 
 //Create the functions that populate the display when you click the number buttons. 
 //You should be storing the ‘display value’ in a variable somewhere for use in the next step.
