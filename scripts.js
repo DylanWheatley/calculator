@@ -26,10 +26,10 @@ let numOne;
 let NumTwo;
 let operator;
 
-let one = document.getElementsByClassName("one");
-let two = document.getElementsByClassName("two");
-let three = document.getElementsByClassName("three");
-let plus = document.getElementsByClassName("plus");
+let one = document.querySelector("one");
+let two = document.querySelector("two");
+let three = document.querySelector("three");
+let plus = document.querySelector("plus");
 
 
 //function called "operate" that takes operator and 2 numbers
@@ -42,3 +42,6 @@ function operate (a, b, oper) {
 //Create the functions that populate the display when you click the number buttons. 
 //You should be storing the ‘display value’ in a variable somewhere for use in the next step.
 
+one,addEventListener("click", () => {
+    
+})
