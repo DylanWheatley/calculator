@@ -27,11 +27,22 @@ let NumTwo;
 let operator;
 let opChoice = false;
 let display = document.querySelector(".display-text");
+let clear = document.querySelector(".clear")
+
 
 const one = document.querySelector(".one");
-let two = document.querySelector(".two");
-let three = document.querySelector(".three");
-let add = document.querySelector(".add");
+const two = document.querySelector(".two");
+const three = document.querySelector(".three");
+const four = document.querySelector(".four");
+const five = document.querySelector(".five");
+const six = document.querySelector(".six");
+const seven = document.querySelector(".seven");
+const eight = document.querySelector(".eight");
+const nine = document.querySelector(".nine");
+const zero = document.querySelector(".zero");
+
+
+const add = document.querySelector(".add");
 
 
 //function called "operate" that takes operator and 2 numbers
@@ -63,7 +74,7 @@ one.addEventListener('click', () => {
 });
 
 two.addEventListener('click', () => {
-    display.textContent = "1";
+    display.textContent = "2";
     if (numOne === undefined) {
         numOne = 2;
         console.log("numOne " + numOne);
@@ -80,9 +91,159 @@ two.addEventListener('click', () => {
     }
 });
 
+three.addEventListener('click', () => {
+    display.textContent = "3";
+    if (numOne === undefined) {
+        numOne = 3;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 3;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 3;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+four.addEventListener('click', () => {
+    display.textContent = "4";
+    if (numOne === undefined) {
+        numOne = 4;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 4;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 4;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+five.addEventListener('click', () => {
+    display.textContent = "5";
+    if (numOne === undefined) {
+        numOne = 5;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 5;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 5;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+six.addEventListener('click', () => {
+    display.textContent = "6";
+    if (numOne === undefined) {
+        numOne = 6;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 6;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 6;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+seven.addEventListener('click', () => {
+    display.textContent = "7";
+    if (numOne === undefined) {
+        numOne = 7;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 7;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 7;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+eight.addEventListener('click', () => {
+    display.textContent = "8";
+    if (numOne === undefined) {
+        numOne = 8;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 8;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 8;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+nine.addEventListener('click', () => {
+    display.textContent = "9";
+    if (numOne === undefined) {
+        numOne = 9;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 9;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 9;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+zero.addEventListener('click', () => {
+    display.textContent = "0";
+    if (numOne === undefined) {
+        numOne = 0;
+        console.log("numOne " + numOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === false){
+        NumOne = 0;
+        console.log("numOne " + NumOne);
+    }
+
+    else if (NumTwo === undefined && opChoice === true) {
+        NumTwo = 0;
+        console.log("NumTwo " + NumTwo) 
+    }
+});
+
+clear.addEventListener('click', () => {
+    numOne = undefined;
+    NumTwo = undefined;
+    console.log(numOne);
+    console.log(NumTwo);
+    display.textContent = "0";
+})
+
 add.addEventListener('click', () => {
     opChoice = true;
 })
 
-console.log(numOne);
-console.log(NumTwo);
