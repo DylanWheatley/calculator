@@ -43,6 +43,8 @@ const equal = document.querySelector(".equal");
 const add = document.querySelector(".add");
 const multi = document.querySelector(".multiply");
 const sub = document.querySelector(".minus");
+const div = document.querySelector(".divide")
+
 
 
 //operate function is what does the actual math operation + puts result on display + checks if two numbers are there
@@ -54,18 +56,30 @@ function operate () {
 
     else if (opChoice === true && operator === "+") {
         numOne = addition(numOne, NumTwo);
+        NumTwo = undefined;
         return display.textContent = numOne.toString();
     }
 
     else if (opChoice === true && operator === "*") {
         numOne = multiply(numOne, NumTwo);
+        NumTwo = undefined;
         return display.textContent = numOne.toString();
     }
 
     else if (opChoice === true && operator === "-") {
         numOne = subtration(numOne, NumTwo);
+        NumTwo = undefined;
         return display.textContent = numOne.toString();
     }
+
+    else if (opChoice === true && operator === "/") {
+        numOne = divide(numOne, NumTwo);
+        NumTwo = undefined;
+        // parseFloat(numOne).toFixed(2);
+        return display.textContent = numOne.toString();
+    }
+
+    equal.removeEventListener('click', operate);
 }
 
 
@@ -279,10 +293,14 @@ sub.addEventListener('click', () => {
     operator = "-";
 })
 
+div.addEventListener('click', () => {
+    opChoice = true;
+    display.textContent = "/"
+    operator = "/";
+})
+
 equal.addEventListener('click', operate);
 
-let testNum = 5;
 
 
-console.log(parseFloat(testNum).toFixed(2));
 
