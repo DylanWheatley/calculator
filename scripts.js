@@ -1,16 +1,5 @@
 
-//notes for 5/10 - work on operate function and make something add together. maybe it checks for the value of operatator variable?
-//and then chooses which math function to use?
-
-
-//make a calculator
-
 //functions for each math operator
-//add, subtract, multiply, divide
-
-
-
-
 function addition (a, b) {
     return a + b;
 }
@@ -27,16 +16,17 @@ function divide (a, b) {
     return a / b;
 }
 
-//variables for each part of equation
-//first number, operand, second number
+//variables for each part of equation + logic varaibles
 let numOne;
 let NumTwo;
 let operator;
 let opChoice = false;
 let display = document.querySelector(".display-text");
+
+//DOM for clear and delete
 let clear = document.querySelector(".clear")
 
-
+//DOM Selectors for numbers
 const one = document.querySelector(".one");
 const two = document.querySelector(".two");
 const three = document.querySelector(".three");
@@ -47,15 +37,15 @@ const seven = document.querySelector(".seven");
 const eight = document.querySelector(".eight");
 const nine = document.querySelector(".nine");
 const zero = document.querySelector(".zero");
+
+//DOM for operators and equal 
 const equal = document.querySelector(".equal");
-
-
 const add = document.querySelector(".add");
+const multi = document.querySelector(".multiply");
+const sub = document.querySelector(".minus");
 
 
-//function called "operate" that takes operator and 2 numbers
-//uses math functions above
-
+//operate function is what does the actual math operation + puts result on display + checks if two numbers are there
 function operate () {
 
     if (numOne === undefined || NumTwo === undefined || opChoice === false) {
@@ -63,12 +53,23 @@ function operate () {
     }
 
     else if (opChoice === true && operator === "+") {
-        return display.textContent = addition(numOne, NumTwo).toString();
+        numOne = addition(numOne, NumTwo);
+        return display.textContent = numOne.toString();
+    }
+
+    else if (opChoice === true && operator === "*") {
+        numOne = multiply(numOne, NumTwo);
+        return display.textContent = numOne.toString();
+    }
+
+    else if (opChoice === true && operator === "-") {
+        numOne = subtration(numOne, NumTwo);
+        return display.textContent = numOne.toString();
     }
 }
 
-//Create the functions that populate the display when you click the number buttons. 
-//You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+
+//Event listeners for all of the buttons, storing number + putting on display
 
 one.addEventListener('click', () => {
     display.textContent = "1";
@@ -258,11 +259,30 @@ clear.addEventListener('click', () => {
     display.textContent = "0";
 })
 
+
+//Event listeners for operators and equal
 add.addEventListener('click', () => {
     opChoice = true;
     display.textContent = "+"
     operator = "+";
 })
 
+multi.addEventListener('click', () => {
+    opChoice = true;
+    display.textContent = "*"
+    operator = "*";
+})
+
+sub.addEventListener('click', () => {
+    opChoice = true;
+    display.textContent = "-"
+    operator = "-";
+})
+
 equal.addEventListener('click', operate);
+
+let testNum = 5;
+
+
+console.log(parseFloat(testNum).toFixed(2));
 
