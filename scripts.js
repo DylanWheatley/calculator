@@ -1,11 +1,18 @@
 
+//notes for 5/10 - work on operate function and make something add together. maybe it checks for the value of operatator variable?
+//and then chooses which math function to use?
+
+
 //make a calculator
 
 //functions for each math operator
 //add, subtract, multiply, divide
 
+
+
+
 function addition (a, b) {
-    return a +b;
+    return a + b;
 }
 
 function subtration (a, b) {
@@ -40,6 +47,7 @@ const seven = document.querySelector(".seven");
 const eight = document.querySelector(".eight");
 const nine = document.querySelector(".nine");
 const zero = document.querySelector(".zero");
+const equal = document.querySelector(".equal");
 
 
 const add = document.querySelector(".add");
@@ -48,8 +56,15 @@ const add = document.querySelector(".add");
 //function called "operate" that takes operator and 2 numbers
 //uses math functions above
 
-function operate (a, b, oper) {
+function operate () {
 
+    if (numOne === undefined || NumTwo === undefined || opChoice === false) {
+        display.textContent = "ERROR";
+    }
+
+    else if (opChoice === true && operator === "+") {
+        return display.textContent = addition(numOne, NumTwo).toString();
+    }
 }
 
 //Create the functions that populate the display when you click the number buttons. 
@@ -238,12 +253,16 @@ zero.addEventListener('click', () => {
 clear.addEventListener('click', () => {
     numOne = undefined;
     NumTwo = undefined;
-    console.log(numOne);
-    console.log(NumTwo);
+    // console.log(numOne);
+    // console.log(NumTwo);
     display.textContent = "0";
 })
 
 add.addEventListener('click', () => {
     opChoice = true;
+    display.textContent = "+"
+    operator = "+";
 })
+
+equal.addEventListener('click', operate);
 

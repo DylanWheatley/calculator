@@ -3,6 +3,7 @@
     height: 600px;
     outline: black solid 1px;
     padding: 10px;
+    background-color: lightblue;
 }
 
 .display {
@@ -11,6 +12,7 @@
     outline: black solid 1px;
     margin: 15px;
     text-align: end;
+    background-color: white;
 }
 
 .display-text {
@@ -58,4 +60,8 @@
     margin: 15px;
     font-size: 18px;
     font-weight: bold;
+}
+
+.keys, .clear, .delete {
+    background-color: lightpink;
 }
