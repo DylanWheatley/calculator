@@ -1,6 +1,5 @@
 
-//NFNT: Can't enter multi-digit numbers, figure out decimals for division.
-//multi digit - a while loop with a boolean? maybe make a function that has all the click for numbers?
+//NFNT: Dividion and decimal work, error for dividing by zero. Maybe turn backspace into negative number button
 
 let digitsDone = false;
 
@@ -19,6 +18,10 @@ function multiply (a, b) {
 }
 
 function divide (a, b) {
+
+    if (b === 0) {
+        return "ERROR";
+    }
     return a / b;
 }
 
@@ -86,8 +89,16 @@ function operate () {
         numOne = divide(numOne, NumTwo);
         NumTwo = undefined;
         opText.textContent = "";
-        // parseFloat(numOne).toFixed(2);
-        return display.textContent = numOne.toString();
+
+        if (numOne%1 === 0) {
+            return display.textContent = numOne.toString();
+        }
+        
+        else if(numOne%1 != 0) {
+            numOne = parseFloat(numOne).toFixed(2);
+            return display.textContent = numOne.toString();
+        }
+        
     }
 
 
@@ -382,24 +393,27 @@ nine.addEventListener('click', () => {
 
 zero.addEventListener('click', () => {
 
-    if (numOne > 0) {
+    if (numOne > 0 || numOne === NaN) {
+
+        if (digitsDone === false) {
+            display.textContent += "0";
+        }
+
+        else {
+            display.textContent = "";
+            display.textContent = "0";
+            digitsDone = false;
+        }
+    }
+
+    else {
+        display.textContent = "0";
+    }
 
     
-    if (digitsDone === false) {
-        display.textContent += "0";
-    }
-    }
-    else {
-        display.textContent = "";
-        display.textContent = "0";
-        digitsDone = false;
-    }
 
-
-
-  
     if (numOne === undefined) {
-        numOne = parseInt(display.textContent);
+        numOne = 0;
         console.log("numOne " + numOne);
     }
 
@@ -411,12 +425,14 @@ zero.addEventListener('click', () => {
     else if (opChoice === true) {
         digitsDone = false;
         NumTwo = parseInt(display.textContent);
-        console.log("NumTwo " + NumTwo) 
+        console.log("NumTwo " + NumTwo); 
     }
 });
 clear.addEventListener('click', () => {
     numOne = undefined;
     NumTwo = undefined;
+    opChoice = false;
+    digitsDone = false;
     // console.log(numOne);
     // console.log(NumTwo);
     display.textContent = "";
@@ -436,18 +452,21 @@ multi.addEventListener('click', () => {
     opChoice = true;
     opText.textContent = "*"
     operator = "*";
+    digitsDone = true;
 })
 
 sub.addEventListener('click', () => {
     opChoice = true;
     opText.textContent = "-"
     operator = "-";
+    digitsDone = true;
 })
 
 div.addEventListener('click', () => {
     opChoice = true;
     opText.textContent = "/"
     operator = "/";
+    digitsDone = true;
 })
 
 equal.addEventListener('click', operate);
