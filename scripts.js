@@ -1,5 +1,4 @@
 
-//NFNT: Dividion and decimal work, error for dividing by zero. Maybe turn backspace into negative number button
 
 let digitsDone = false;
 
@@ -47,6 +46,7 @@ const seven = document.querySelector(".seven");
 const eight = document.querySelector(".eight");
 const nine = document.querySelector(".nine");
 const zero = document.querySelector(".zero");
+const bobs = document.querySelector(".bobs");
 
 //DOM for operators and equal 
 const equal = document.querySelector(".equal");
@@ -107,6 +107,17 @@ function operate () {
 
 
 //Event listeners for all of the buttons, storing number + putting on display
+
+bobs.addEventListener('click', () => {
+    numOne = undefined;
+    NumTwo = undefined;
+    opChoice = false;
+    digitsDone = false;
+    // console.log(numOne);
+    // console.log(NumTwo);
+    display.textContent = "80085";
+    opText.textContent = "(.)(.)";
+})
 
 one.addEventListener('click', () => {
 
