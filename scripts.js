@@ -1,4 +1,10 @@
 
+//NFNT: Can't enter multi-digit numbers, figure out decimals for division.
+//multi digit - a while loop with a boolean? maybe make a function that has all the click for numbers?
+
+let digitsDone = false;
+
+
 //functions for each math operator
 function addition (a, b) {
     return a + b;
@@ -22,6 +28,7 @@ let NumTwo;
 let operator;
 let opChoice = false;
 let display = document.querySelector(".display-text");
+let opText = document.querySelector(".op-text");
 
 //DOM for clear and delete
 let clear = document.querySelector(".clear")
@@ -56,28 +63,33 @@ function operate () {
 
     else if (opChoice === true && operator === "+") {
         numOne = addition(numOne, NumTwo);
-        NumTwo = undefined;
+        NumTwo = undefined; //resets math each time, allowing for the answer to have a new operator and number
+        opText.textContent = "";
         return display.textContent = numOne.toString();
     }
 
     else if (opChoice === true && operator === "*") {
         numOne = multiply(numOne, NumTwo);
         NumTwo = undefined;
+        opText.textContent = "";
         return display.textContent = numOne.toString();
     }
 
     else if (opChoice === true && operator === "-") {
         numOne = subtration(numOne, NumTwo);
         NumTwo = undefined;
+        opText.textContent = "";
         return display.textContent = numOne.toString();
     }
 
     else if (opChoice === true && operator === "/") {
         numOne = divide(numOne, NumTwo);
         NumTwo = undefined;
+        opText.textContent = "";
         // parseFloat(numOne).toFixed(2);
         return display.textContent = numOne.toString();
     }
+
 
     equal.removeEventListener('click', operate);
 }
@@ -86,221 +98,359 @@ function operate () {
 //Event listeners for all of the buttons, storing number + putting on display
 
 one.addEventListener('click', () => {
-    display.textContent = "1";
+
+
+    if (digitsDone === false) {
+        display.textContent += "1";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "1";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 1;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 1;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 1;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 two.addEventListener('click', () => {
-    display.textContent = "2";
+
+
+    if (digitsDone === false) {
+        display.textContent += "2";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "2";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 2;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 2;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 2;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 three.addEventListener('click', () => {
-    display.textContent = "3";
+    if (digitsDone === false) {
+        display.textContent += "3";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "3";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 3;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 3;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 3;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 four.addEventListener('click', () => {
-    display.textContent = "4";
+    if (digitsDone === false) {
+        display.textContent += "4";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "4";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 4;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 4;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 4;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 five.addEventListener('click', () => {
-    display.textContent = "5";
+    if (digitsDone === false) {
+        display.textContent += "5";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "5";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 5;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 5;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 5;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 six.addEventListener('click', () => {
-    display.textContent = "6";
+    if (digitsDone === false) {
+        display.textContent += "6";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "6";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 6;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 6;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 6;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 seven.addEventListener('click', () => {
-    display.textContent = "7";
+    if (digitsDone === false) {
+        display.textContent += "7";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "7";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 7;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 7;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 7;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 eight.addEventListener('click', () => {
-    display.textContent = "8";
+    if (digitsDone === false) {
+        display.textContent += "8";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "8";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 8;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 8;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 8;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 nine.addEventListener('click', () => {
-    display.textContent = "9";
+    if (digitsDone === false) {
+        display.textContent += "9";
+    }
+
+    else {
+        display.textContent = "";
+        display.textContent = "9";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 9;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 9;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 9;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
 
 zero.addEventListener('click', () => {
-    display.textContent = "0";
+
+    if (numOne > 0) {
+
+    
+    if (digitsDone === false) {
+        display.textContent += "0";
+    }
+    }
+    else {
+        display.textContent = "";
+        display.textContent = "0";
+        digitsDone = false;
+    }
+
+
+
+  
     if (numOne === undefined) {
-        numOne = 0;
+        numOne = parseInt(display.textContent);
         console.log("numOne " + numOne);
     }
 
     else if (NumTwo === undefined && opChoice === false){
-        NumOne = 0;
-        console.log("numOne " + NumOne);
+        numOne = parseInt(display.textContent);
+        console.log("numOne " + numOne);
     }
 
-    else if (NumTwo === undefined && opChoice === true) {
-        NumTwo = 0;
+    else if (opChoice === true) {
+        digitsDone = false;
+        NumTwo = parseInt(display.textContent);
         console.log("NumTwo " + NumTwo) 
     }
 });
-
 clear.addEventListener('click', () => {
     numOne = undefined;
     NumTwo = undefined;
     // console.log(numOne);
     // console.log(NumTwo);
-    display.textContent = "0";
+    display.textContent = "";
+    opText.textContent = "";
 })
 
 
 //Event listeners for operators and equal
 add.addEventListener('click', () => {
     opChoice = true;
-    display.textContent = "+"
+    opText.textContent = "+"
     operator = "+";
+    digitsDone = true;
 })
 
 multi.addEventListener('click', () => {
     opChoice = true;
-    display.textContent = "*"
+    opText.textContent = "*"
     operator = "*";
 })
 
 sub.addEventListener('click', () => {
     opChoice = true;
-    display.textContent = "-"
+    opText.textContent = "-"
     operator = "-";
 })
 
 div.addEventListener('click', () => {
     opChoice = true;
-    display.textContent = "/"
+    opText.textContent = "/"
     operator = "/";
 })
 
 equal.addEventListener('click', operate);
-
 
 
 
